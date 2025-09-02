@@ -189,6 +189,10 @@
   cursor: pointer;
 }
 
+.action-text{
+  font-size: 13px;
+}
+
 .action-item:hover,
 .action-item.selected {
   
@@ -218,7 +222,7 @@
   color: #007aff;
 }
 
-/* Selected icon style for all except away-mode */
+
 
 /* Make away-mode icon behave like others */
 .action-icon.away-mode {
