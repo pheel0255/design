@@ -8,6 +8,9 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* Header Styles */
@@ -16,6 +19,22 @@
   padding: 0;
 }
 
+.back-btn {
+  color: #4c4b4b;
+  background-color: #d7dadc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.back-btn:hover {
+  color: #727374;
+  background-color: #f5f5f6;
+  border: 1px solid #424344;
+}
 .status-bar {
   display: flex;
   justify-content: space-between;
@@ -195,6 +214,32 @@
 .nav-item span {
   font-size: 12px;
   font-weight: 500;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px 0;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.nav-item.selected,
+.nav-item:hover {
+  color: #007aff;
+}
+
+.nav-item.selected i,
+.nav-item:hover i {
+  color: #007aff;
+}
+
+.nav-item.selected span,
+.nav-item:hover span {
+  color: #007aff;
 }
 
 /* Navigation Buttons */

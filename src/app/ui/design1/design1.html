@@ -2,6 +2,9 @@
   <!-- Header -->
   <div class="header">
     <div class="page-header">
+      <button class="back-btn" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
       <h1>My devices</h1>
       <button class="add-btn">
         <i class="fas fa-plus"></i>
@@ -39,22 +42,34 @@
   </div>
 
   <!-- Navigation Buttons -->
-  <div class="nav-buttons">
-    <div class="nav-item active">
-      <i class="fas fa-mobile-alt"></i>
-      <span>Devices</span>
-    </div>
-    <div class="nav-item">
-      <i class="fas fa-user"></i>
-      <span>Member</span>
-    </div>
-    <div class="nav-item">
-      <i class="fas fa-inbox"></i>
-      <span>Inbox</span>
-    </div>
-    <div class="nav-item">
-      <i class="fas fa-clock"></i>
-      <span>Me</span>
-    </div>
+ <div class="nav-buttons">
+  <div 
+    class="nav-item" 
+    [class.selected]="selectedNav === 'devices'" 
+    (click)="selectNav('devices')">
+    <i class="fas fa-mobile-alt"></i>
+    <span>Devices</span>
   </div>
+  <div 
+    class="nav-item" 
+    [class.selected]="selectedNav === 'member'" 
+    (click)="selectNav('member')">
+    <i class="fas fa-user"></i>
+    <span>Member</span>
+  </div>
+  <div 
+    class="nav-item" 
+    [class.selected]="selectedNav === 'inbox'" 
+    (click)="selectNav('inbox')">
+    <i class="fas fa-inbox"></i>
+    <span>Inbox</span>
+  </div>
+  <div 
+    class="nav-item" 
+    [class.selected]="selectedNav === 'me'" 
+    (click)="selectNav('me')">
+    <i class="fas fa-clock"></i>
+    <span>Me</span>
+  </div>
+</div>
 </div>

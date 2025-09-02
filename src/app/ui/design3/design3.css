@@ -7,6 +7,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* Status Bar */
@@ -65,13 +67,20 @@
 }
 
 .back-btn {
-  background: none;
+  color: #4c4b4b;
+  background-color: #d7dadc;
+  padding: 8px 16px;
+  border-radius: 8px;
   border: none;
   font-size: 16px;
-  color: #585757;
-  cursor: pointer;
-  padding: 8px;
-  margin-right: 16px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.back-btn:hover {
+  color: #727374;
+  background-color: #f5f5f6;
+  border: 1px solid #424344;
 }
 
 .device-title {
@@ -180,6 +189,12 @@
   cursor: pointer;
 }
 
+.action-item:hover,
+.action-item.selected {
+  
+  color: #007aff;
+}
+
 .action-icon {
   width: 60px;
   height: 60px;
@@ -192,39 +207,47 @@
   transition: transform 0.2s;
 }
 
-.action-icon:hover {
-  transform: scale(1.05);
+/* Selected and hover state for action-item */
+.action-item:hover,
+.action-item.selected {
+  color:#007aff
 }
 
+.action-item.selected .action-text,
+.action-item:hover .action-text {
+  color: #007aff;
+}
+
+/* Selected icon style for all except away-mode */
+
+/* Make away-mode icon behave like others */
 .action-icon.away-mode {
-  background-color: #007bff;
-}
-
-.action-icon.activities {
   background-color: #f8f9fa;
   border: 2px solid #dee2e6;
   color: #333;
 }
 
-.action-icon.share {
-  background-color: #f8f9fa;
+/* Selected and hover state for all icons */
+.action-item.selected .action-icon,
+.action-item:hover .action-icon {
+  border-color: #007aff;
+  color: #007aff;
+}
+
+/* Selected and hover state for text */
+.action-item.selected .action-text,
+.action-item:hover .action-text {
+  color: #007aff;
+}
+
+.action-icon.activities,
+.action-icon.share,
+.action-icon.settings,
+.action-icon.away-mode {
+  
   border: 2px solid #dee2e6;
   color: #333;
 }
-
-.action-icon.settings {
-  background-color: #f8f9fa;
-  border: 2px solid #dee2e6;
-  color: #333;
-}
-
-.action-text {
-  font-size: 12px;
-  color: #333;
-  font-weight: 500;
-  text-align: center;
-}
-
 /* Responsive Design */
 @media (max-width: 375px) {
   .bluetooth-container {
@@ -282,3 +305,5 @@
     border-right: 1px solid #e9ecef;
   }
 }
+
+

@@ -1,7 +1,7 @@
-<div class="bluetooth-container">
+<div class="bluetooth-container ">
   <!-- Header with Back Button -->
   <div class="header">
-    <button class="back-btn">
+    <button class="back-btn back " (click)="goBack()">
       <i class="fas fa-arrow-left"></i>
     </button>
     <h1 class="device-title">BT01191918898</h1>
@@ -14,7 +14,7 @@
     </div>
     <div class="battery-info">
       <span class="battery-level">88%</span>
-      <span class="last-updated">August 7, 2020 2:55 PM</span>
+      <span class="last-updated">{{ currentDate}}</span>
     </div>
   </div>
 
@@ -34,32 +34,44 @@
 
   <!-- Action Buttons -->
   <div class="action-buttons">
-    <div class="action-item">
-      <div class="action-icon away-mode">
-        <i class="fas fa-home"></i>
-      </div>
-      <span class="action-text">Away mode</span>
+ <div 
+    class="action-item" 
+    [class.selected]="selectedAction === 'away'" 
+    (click)="selectAction('away')">
+    <div class="action-icon away-mode">
+      <i class="fas fa-home"></i>
     </div>
-
-    <div class="action-item">
-      <div class="action-icon activities">
-        <i class="fas fa-bell"></i>
-      </div>
-      <span class="action-text">Activities</span>
-    </div>
-
-    <div class="action-item">
-      <div class="action-icon share">
-        <i class="fas fa-share-alt"></i>
-      </div>
-      <span class="action-text">Share</span>
-    </div>
-
-    <div class="action-item">
-      <div class="action-icon settings">
-        <i class="fas fa-cog"></i>
-      </div>
-      <span class="action-text">Settings</span>
-    </div>
+    <span class="action-text">Away mode</span>
   </div>
+
+  <div 
+    class="action-item" 
+    [class.selected]="selectedAction === 'activities'" 
+    (click)="selectAction('activities')">
+    <div class="action-icon activities">
+      <i class="fas fa-bell"></i>
+    </div>
+    <span class="action-text">Activities</span>
+  </div>
+
+  <div 
+    class="action-item" 
+    [class.selected]="selectedAction === 'share'" 
+    (click)="selectAction('share')">
+    <div class="action-icon share">
+      <i class="fas fa-share-alt"></i>
+    </div>
+    <span class="action-text">Share</span>
+  </div>
+
+  <div 
+    class="action-item" 
+    [class.selected]="selectedAction === 'settings'" 
+    (click)="selectAction('settings')">
+    <div class="action-icon settings">
+      <i class="fas fa-cog"></i>
+    </div>
+    <span class="action-text">Settings</span>
+  </div>
+</div>
 </div>
